@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>简单问答系统</title>  
+</head>  
+<body>  
+  
+<input type="text" id="userInput" placeholder="请输入内容">  
+<button onclick="respond()">回答</button>  
+<p id="result"></p>  
+  
+<script>  
+// 定义一个对象来存储输入和输出的映射  
+const responses = {  
+    "今天天气": "很好",  
+    "坐北": "朝南",  
+    // 可以在这里添加更多的映射  
+};  
+  
+function respond() {  
+    var input = document.getElementById("userInput").value.trim(); // 去除首尾空格  
+    var resultElement = document.getElementById("result");  
+    var response = responses[input]; // 尝试从映射中获取对应的输出  
+  
+    if (response) {  
+        // 如果找到了对应的输出，则显示它  
+        resultElement.textContent = response;  
+    } else {  
+        // 如果没有找到对应的输出，则显示一个默认消息  
+        resultElement.textContent = "未找到对应的回答，请尝试其他输入。";  
+    }  
+}  
+</script>  
+  
+</body>  
+</html>
